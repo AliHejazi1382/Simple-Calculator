@@ -1,5 +1,6 @@
 package com.example.simplecalculator.ui.calculator
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -27,11 +28,13 @@ fun Calculator(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(8.dp),
-        contentAlignment = Alignment.Center
+            .padding(8.dp)
+            .background(MaterialTheme.colorScheme.background),
+        contentAlignment = Alignment.BottomCenter
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize()
+                .align(Alignment.BottomCenter),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -45,7 +48,8 @@ fun Calculator(
                 else 50.sp
             )
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
+                    ,
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
                 CalculatorButton(
@@ -74,7 +78,8 @@ fun Calculator(
                 )
             }
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
+                    .padding(6.dp),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
                 CalculatorButton(
@@ -111,7 +116,8 @@ fun Calculator(
                 )
             }
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
+                    .padding(6.dp),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
                 CalculatorButton(
@@ -148,7 +154,8 @@ fun Calculator(
                 )
             }
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
+                    .padding(6.dp),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
                 CalculatorButton(
@@ -185,7 +192,8 @@ fun Calculator(
                 )
             }
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
+                    .padding(6.dp),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
                 CalculatorButton(

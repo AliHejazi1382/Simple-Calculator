@@ -10,7 +10,7 @@ import com.example.simplecalculator.operations.States
 import com.example.simplecalculator.utils.deleteZero
 
 class CalculatorViewModel : ViewModel() {
-    private var state by mutableStateOf(States())
+    var state by mutableStateOf(States())
 
     fun onAction(action: Actions) {
         when (action) {
