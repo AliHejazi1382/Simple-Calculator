@@ -34,3 +34,12 @@ fun CalculatorButton(
         )
     }
 }
+
+fun deleteZero(number: String): String {
+    var _number = number
+    if (number[number.length - 1] == '0' && number[number.length - 2] == '.') {
+        _number = number.dropLast(1)
+        _number = _number.dropLast(1)
+    }
+    return _number
+}
