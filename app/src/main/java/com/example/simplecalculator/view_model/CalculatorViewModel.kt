@@ -9,25 +9,43 @@ import com.example.simplecalculator.operations.CalculationOperation
 import com.example.simplecalculator.operations.States
 import com.example.simplecalculator.utils.deleteZero
 
+/**
+ * the class that keep the operating
+ *
+ */
 class CalculatorViewModel : ViewModel() {
     var state by mutableStateOf(States())
 
+    /**
+     * to do when we click on each calculator button
+     *
+     * @param action the action related to each button
+     */
     fun onAction(action: Actions) {
         when (action) {
             is Actions.Calculation -> onCalculation()
             is Actions.Decimal -> onDecimal()
             is Actions.Numbers -> onNumbers(action.number)
-            is  Actions.Delete -> onDelete()
+            is Actions.Delete -> onDelete()
             is Actions.Clear -> state = States()
             is Actions.Operation -> onOperation(action.operation)
         }
     }
 
+    /**
+     * the function when we click on each operating button
+     *
+     * @param operation the parameter that contains operator
+     */
     private fun onOperation(operation: CalculationOperation) {
         if (state.num1.isNotBlank())
             state = state.copy(operation = operation)
     }
 
+    /**
+     * the function when we click on Del button
+     *
+     */
     private fun onDelete() {
         if (state.operation == null) {
             if (state.num1.isNotBlank()) {
@@ -43,6 +61,11 @@ class CalculatorViewModel : ViewModel() {
         state = state.copy(num2 = state.num2.dropLast(1))
     }
 
+    /**
+     * the function when we click on number button
+     *
+     * @param number the parameter that contains the number
+     */
     private fun onNumbers(number: Int) {
         if (state.operation == null) {
             if (state.num1.length >= MAX_LENGTH) return
@@ -54,6 +77,10 @@ class CalculatorViewModel : ViewModel() {
         state = state.copy(num2 = state.num2 + number)
     }
 
+    /**
+     * the function when we click on dot button
+     *
+     */
     private fun onDecimal() {
         if (state.operation == null) {
             if (state.num1.isNotBlank() && !state.num1.contains(".")) {
@@ -68,6 +95,10 @@ class CalculatorViewModel : ViewModel() {
         }
     }
 
+    /**
+     * the function when we click on calculating button
+     *
+     */
     private fun onCalculation() {
         val num1 = state.num1.toDoubleOrNull()
         val num2 = state.num2.toDoubleOrNull()
@@ -77,7 +108,9 @@ class CalculatorViewModel : ViewModel() {
                 is CalculationOperation.Subtract -> num1 - num2
                 is CalculationOperation.Multiply -> num1 * num2
                 is CalculationOperation.Divide -> num1 / num2
-                else -> {return}
+                else -> {
+                    return
+                }
             }
             state = state.copy(
                 num1 = deleteZero(result.toBigDecimal().toPlainString().take(16)),
@@ -86,6 +119,7 @@ class CalculatorViewModel : ViewModel() {
             )
         }
     }
+
     companion object {
         const val MAX_LENGTH = 8
     }

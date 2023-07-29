@@ -19,6 +19,13 @@ import com.example.simplecalculator.operations.States
 import com.example.simplecalculator.ui.theme.Orange
 import com.example.simplecalculator.utils.CalculatorButton
 
+/**
+ * Builds a calculator from scratch
+ *
+ * @param spacedSize space between buttons
+ * @param state state of numbers and operators
+ * @param onAction Actions to do, decimal, delete etc
+ */
 @Composable
 fun Calculator(
     spacedSize: Dp,

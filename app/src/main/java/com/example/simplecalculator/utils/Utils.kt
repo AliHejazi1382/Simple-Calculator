@@ -13,6 +13,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/**
+ * creates the button of the calculator
+ *
+ * @param modifier to modify the box into it
+ * @param text the text of calculator button
+ * @param color color of calculator button
+ * @param onClick it executes when we click on calculator button
+ */
 @Composable
 fun CalculatorButton(
     modifier: Modifier,
@@ -37,6 +45,12 @@ fun CalculatorButton(
     }
 }
 
+/**
+ * deletes zero after the decimal point
+ *
+ * @param number the number with zero after the decimal point
+ * @return the number without zero after the decimal point
+ */
 fun deleteZero(number: String): String {
     var _number = number
     if (number[number.length - 1] == '0' && number[number.length - 2] == '.') {
