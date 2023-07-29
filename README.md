@@ -12,6 +12,11 @@ This is the App:
 
 ![Screenshot_20230729-121117_Simple Calculator](https://github.com/AliHejazi1382/Simple-Calculator/assets/64190439/b5e8f9aa-87aa-49d3-b5c3-976a683d01ae)![Screenshot_20230729-121134_Simple Calculator](https://github.com/AliHejazi1382/Simple-Calculator/assets/64190439/1eea1a97-afcb-447a-b94f-c27adcd565df)
 
+## Contact me
+* [LinkedIn](https://www.linkedin.com/in/ali-hejazi-3b36781a3/)
+
+* [YouTube](https://www.youtube.com/channel/UC-MpdWkXlHi_k3QO42NMqLA?view_as=subscriber)
+
 
 
 
