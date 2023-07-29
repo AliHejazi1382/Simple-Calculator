@@ -36,14 +36,12 @@ fun Calculator(
         modifier = Modifier
             .fillMaxSize()
             .padding(8.dp)
-            .background(MaterialTheme.colorScheme.background),
-        contentAlignment = Alignment.BottomCenter
+            .background(MaterialTheme.colorScheme.background)
     ) {
         Column(
-            modifier = Modifier.fillMaxSize()
-                .align(Alignment.BottomCenter),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
         ) {
             Text(
                 text = state.toString(),
@@ -55,8 +53,7 @@ fun Calculator(
                 else 50.sp
             )
             Row(
-                modifier = Modifier.fillMaxWidth()
-                    ,
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
                 CalculatorButton(
@@ -85,7 +82,8 @@ fun Calculator(
                 )
             }
             Row(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
                     .padding(6.dp),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
@@ -123,7 +121,8 @@ fun Calculator(
                 )
             }
             Row(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
                     .padding(6.dp),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
@@ -161,7 +160,8 @@ fun Calculator(
                 )
             }
             Row(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
                     .padding(6.dp),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
@@ -199,7 +199,8 @@ fun Calculator(
                 )
             }
             Row(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
                     .padding(6.dp),
                 horizontalArrangement = Arrangement.spacedBy(spacedSize)
             ) {
